@@ -1,0 +1,282 @@
+/* ============================================================
+   NIRANJAN — shared styles for index.html and any project page
+   (like lamp.html). Edit colors/fonts here once, both pages update.
+============================================================ */
+:root {
+  --paper: #fbf3e7;
+  --ink: #3a2f22;
+  --ink-soft: #6b5c46;
+  --olive: #8a9a5b;
+  --ochre: #c68a3e;
+  --ochre-soft: rgba(198, 138, 62, 0.28);
+  --line: rgba(58, 47, 34, 0.12);
+  --card: #ffffff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+.wrap { max-width: 720px; padding: 0 8vw; }
+
+/* ---------- right-side jump nav (desktop) ---------- */
+.side-nav {
+  position: fixed; right: 2.4rem; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; gap: 1.1rem; z-index: 20;
+}
+.side-nav a {
+  display: flex; align-items: center; gap: 0.65rem;
+  font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
+}
+.side-nav a .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--ochre);
+  opacity: 0.45; flex-shrink: 0; transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.side-nav a:hover, .side-nav a.active { color: var(--ink); }
+.side-nav a:hover .dot, .side-nav a.active .dot { opacity: 1; transform: scale(1.3); }
+
+/* bottom bar version for small / narrow screens */
+.bottom-nav {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+  background: rgba(251,243,231,0.95); backdrop-filter: blur(6px);
+  border-top: 1px solid var(--line);
+  padding: 0.8rem 4vw; justify-content: space-around;
+}
+.bottom-nav a {
+  font-size: 0.72rem; color: var(--ink-soft); text-decoration: none;
+  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+}
+.bottom-nav a .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); opacity: 0.4; }
+.bottom-nav a.active, .bottom-nav a:hover { color: var(--ink); }
+.bottom-nav a.active .dot { opacity: 1; }
+
+@media (max-width: 1080px) {
+  .side-nav { display: none; }
+  .bottom-nav { display: flex; }
+  body { padding-bottom: 4.5rem; }
+}
+
+/* ---------- hero ---------- */
+.hero { padding: 14vh 8vw 8vh; max-width: 760px; }
+.eyebrow {
+  font-family: 'Space Mono', monospace; font-size: 0.7rem;
+  letter-spacing: 0.06em; color: var(--olive); text-transform: uppercase;
+  margin-bottom: 1.1rem;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.18; letter-spacing: -0.01em;
+  max-width: 16ch;
+}
+.tag {
+  margin-top: 2.2rem; display: inline-flex; align-items: center;
+  gap: 0.9rem; padding: 0.65rem 1.3rem; background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px; text-decoration: none; color: var(--ink);
+}
+.dot-lg {
+  width: 9px; height: 9px; border-radius: 50%; background: var(--ochre);
+  box-shadow: 0 0 8px 2px var(--ochre-soft);
+  animation: breathe 3.2s ease-in-out infinite; flex-shrink: 0;
+}
+@keyframes breathe { 0%,100%{opacity:.55;} 50%{opacity:1;} }
+.tag-text { font-family: 'Space Mono', monospace; font-size: 0.8rem; }
+
+/* ---------- section shell ---------- */
+section { padding: 6vh 8vw; max-width: 760px; }
+section h2.section-title {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(1.7rem, 3.6vw, 2.3rem);
+  margin-bottom: 2.6rem; max-width: 20ch;
+}
+
+/* ---------- NOW ---------- */
+.entry { display: flex; gap: 1.4rem; padding: 1.5rem 0; border-top: 1px solid var(--line); }
+.entry:last-child { border-bottom: 1px solid var(--line); }
+.entry .status { flex-shrink: 0; width: 80px; padding-top: 0.2rem; }
+.status-label {
+  font-family: 'Space Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.03em; color: var(--ink-soft); text-transform: uppercase;
+}
+.entry h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.1rem; margin-bottom: 0.3rem; }
+.entry p { font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; max-width: 48ch; }
+
+/* ---------- ABOUT ---------- */
+.about-line {
+  font-size: 1.02rem; color: var(--ink-soft); line-height: 1.75;
+  max-width: 56ch; margin-bottom: 2.2rem;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.chip {
+  font-size: 0.85rem; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line);
+  padding: 0.45rem 0.9rem; border-radius: 999px;
+}
+
+/* ---------- STORY ---------- */
+.story-intro {
+  font-family: 'Fraunces', serif; font-style: italic; font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--ink); line-height: 1.6; max-width: 54ch; margin-bottom: 3.5rem;
+}
+.trail { position: relative; padding-left: 2rem; }
+.trail::before { content: ""; position: absolute; left: 5px; top: 8px; bottom: 8px; width: 1px; background: var(--line); }
+.beat { position: relative; padding-bottom: 3.2rem; }
+.beat:last-child { padding-bottom: 0; }
+.beat::before {
+  content: ""; position: absolute; left: -2rem; top: 6px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--ochre);
+  transition: box-shadow 0.6s ease;
+}
+.beat.in-view::before { box-shadow: 0 0 10px 2px var(--ochre-soft); }
+.beat .when {
+  font-family: 'Space Mono', monospace; font-size: 0.68rem;
+  color: var(--olive); text-transform: uppercase; letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.beat h3 {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  margin-bottom: 0.7rem;
+}
+.beat p { font-size: 0.96rem; color: var(--ink-soft); line-height: 1.7; max-width: 54ch; margin-bottom: 0.8rem; }
+.beat p:last-of-type { margin-bottom: 0; }
+
+/* a beat's heading row, when it carries a small motif icon next to the title */
+.beat-heading { display: flex; align-items: center; gap: 10px; margin-bottom: 0.7rem; }
+.beat-heading h3 { margin-bottom: 0; }
+.motif { flex-shrink: 0; }
+
+.pull {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  color: var(--ink); line-height: 1.5; max-width: 30ch;
+  margin: 1.2rem 0 1.4rem; border-left: 2px solid var(--ochre); padding-left: 1.1rem;
+}
+.photo {
+  margin: 1.3rem 0; border-radius: 6px; overflow: hidden;
+  background: var(--card); border: 1px dashed var(--line);
+  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.photo.wide { aspect-ratio: 16/9; }
+.photo.empty {
+  flex-direction: column; gap: 0.5rem;
+  font-family: 'Space Mono', monospace; font-size: 0.68rem;
+  color: var(--ink-soft); text-align: center; padding: 1.3rem;
+}
+.photo.empty .plus { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--ochre); }
+.closing-line {
+  font-family: 'Fraunces', serif; font-style: italic;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  color: var(--ink); line-height: 1.55; max-width: 44ch; margin-top: 4vh;
+}
+
+/* link from the front page into a dedicated project page, e.g. lamp.html */
+.process-link {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: 'Space Mono', monospace; font-size: 0.8rem;
+  color: var(--ochre); text-decoration: none; margin-top: 0.6rem;
+  border-bottom: 1px solid var(--ochre-soft); padding-bottom: 2px;
+}
+.process-link:hover { color: var(--ink); }
+
+/* ---------- CONNECT ---------- */
+#connect { border-top: 1px solid var(--line); padding-top: 7vh; padding-bottom: 10vh; }
+#connect .section-title { margin-bottom: 0.8rem; }
+#connect .sub { font-size: 0.98rem; color: var(--ink-soft); margin-bottom: 2.2rem; max-width: 46ch; }
+
+form.msg { display: flex; flex-direction: column; gap: 0.9rem; max-width: 460px; }
+form.msg input, form.msg textarea {
+  font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--ink);
+  background: var(--card); border: 1px solid var(--line); border-radius: 8px;
+  padding: 0.8rem 1rem; outline: none; resize: vertical;
+}
+form.msg input:focus, form.msg textarea:focus { border-color: var(--ochre); }
+form.msg textarea { min-height: 100px; }
+form.msg button {
+  align-self: flex-start;
+  font-family: 'Space Mono', monospace; font-size: 0.82rem;
+  color: var(--paper); background: var(--ink);
+  border: none; border-radius: 999px;
+  padding: 0.75rem 1.6rem; cursor: pointer;
+  transition: background 0.2s ease;
+}
+form.msg button:hover { background: var(--ochre); }
+.msg-note { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--ink-soft); margin-top: 0.4rem; }
+
+/* ---------- PROJECT PAGE (lamp.html and any future ones) ---------- */
+.page-nav { padding: 2.2rem 8vw 0; }
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: 'Space Mono', monospace; font-size: 0.78rem;
+  color: var(--ink-soft); text-decoration: none;
+}
+.back-link:hover { color: var(--ink); }
+.project-hero { padding-top: 8vh; }
+.project-title {
+  font-family: 'Fraunces', serif; font-weight: 500;
+  font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+  line-height: 1.2; letter-spacing: -0.01em; max-width: 18ch; margin-bottom: 1.2rem;
+}
+.project-intro { font-size: 1.02rem; color: var(--ink-soft); line-height: 1.7; max-width: 52ch; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; }
+.gallery .photo { margin: 0; }
+
+/* ---------- SCROLL ANIMATIONS ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in-view { opacity: 1; transform: none; }
+}
+
+/* MOTIF: car — wheels turn and the headlight glows on when its beat appears */
+.motif-car .car-wheel, .motif-car .car-light { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .beat.in-view .car-wheel { animation: car-spin 0.9s ease-out 1; }
+  .beat.in-view .car-light { animation: car-light-on 0.6s ease forwards; animation-delay: 0.45s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .car-light { opacity: 1; }
+}
+@keyframes car-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes car-light-on { to { opacity: 1; filter: drop-shadow(0 0 3px var(--ochre)); } }
+
+/* MOTIF: bulb — filament glows on when its beat appears */
+@media (prefers-reduced-motion: no-preference) {
+  .beat.in-view .bulb-filament { animation: bulb-on 0.7s ease forwards; animation-delay: 0.3s; }
+  .beat.in-view .bulb-glass { transition: filter 0.7s ease 0.3s; filter: drop-shadow(0 0 6px var(--ochre-soft)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bulb-filament { opacity: 1; }
+}
+@keyframes bulb-on { to { opacity: 1; } }
+
+/* MOTIF: fan — rotation is tied directly to scroll position, see script.js */
+.fan-blades { transform-box: fill-box; transform-origin: center; }
+
+/* MOTIF: resin drop — falls and settles when its beat appears */
+.resin-drop { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .beat.in-view .resin-drop { animation: resin-fall 0.9s cubic-bezier(.34,1.4,.64,1) forwards; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .resin-drop { opacity: 1; }
+}
+@keyframes resin-fall {
+  0% { transform: translateY(-22px) scaleY(0.8); opacity: 0; }
+  60% { transform: translateY(2px) scaleY(1.08); opacity: 1; }
+  80% { transform: translateY(-3px) scaleY(0.96); }
+  100% { transform: translateY(0) scaleY(1); opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .hero, .project-hero { padding: 10vh 6vw 6vh; }
+  section { padding: 5vh 6vw; }
+  .entry { flex-direction: column; gap: 0.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { .dot-lg { animation: none; opacity: .9; } }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--ochre); outline-offset: 2px; }
