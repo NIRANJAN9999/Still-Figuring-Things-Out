@@ -7,110 +7,216 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500&family=Space+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-/* ============================================================
-   NIRANJAN — single page, plain-spoken, skim-friendly.
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-   ORDER ON PAGE (top to bottom):
-   1. Hero — one line, who I am
-   2. Now — what I'm doing today
-   3. About — quick interests
-   4. Story — the long version, but broken into headlines
-   5. Connect — a small message box (Formspree)
+<!-- ===== RIGHT-SIDE NAV — jumps straight to a section, no scrolling needed ===== -->
+<nav class="side-nav" id="sideNav">
+  <a href="#now" data-target="now"><span class="dot"></span>Now</a>
+  <a href="#about" data-target="about"><span class="dot"></span>About</a>
+  <a href="#story" data-target="story"><span class="dot"></span>Story</a>
+  <a href="#connect" data-target="connect"><span class="dot"></span>Connect</a>
+</nav>
+<nav class="bottom-nav" id="bottomNav">
+  <a href="#now" data-target="now"><span class="dot"></span>Now</a>
+  <a href="#about" data-target="about"><span class="dot"></span>About</a>
+  <a href="#story" data-target="story"><span class="dot"></span>Story</a>
+  <a href="#connect" data-target="connect"><span class="dot"></span>Connect</a>
+</nav>
 
-   TO EDIT:
-   - Colors: all in :root below.
-   - Formspree: search "FORMSPREE" below and paste your own
-     form endpoint (make a free one at formspree.io).
-   - Photo slots: replace <div class="photo empty">…</div> with
-     <div class="photo"><img src="your-photo.jpg" alt=""></div>
-   - Scroll motifs (bulb / car / fan / resin drop): each is a
-     small inline SVG marked "MOTIF" below, sitting next to a
-     beat's heading. Delete a motif's <svg> block to remove it —
-     nothing else depends on it.
-============================================================ */
-:root {
-  --paper: #fbf3e7;
-  --ink: #3a2f22;
-  --ink-soft: #6b5c46;
-  --olive: #8a9a5b;
-  --ochre: #c68a3e;
-  --ochre-soft: rgba(198, 138, 62, 0.28);
-  --line: rgba(58, 47, 34, 0.12);
-  --card: #ffffff;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--paper);
-  color: var(--ink);
-  font-family: 'Inter', -apple-system, sans-serif;
-}
-.wrap { max-width: 720px; padding: 0 8vw; }
+<!-- ===== HERO — one line, says who I am ===== -->
+<div class="hero" id="top">
+  <div class="eyebrow">Niranjan</div>
+  <h1>I take things apart to understand them. I'm still doing it.</h1>
+  <a href="#story" class="tag">
+    <span class="dot-lg"></span>
+    <span class="tag-text">Opening things apart since before I owned a screwdriver</span>
+  </a>
+</div>
 
-/* ---------- right-side jump nav (desktop) ---------- */
-.side-nav {
-  position: fixed; right: 2.4rem; top: 50%; transform: translateY(-50%);
-  display: flex; flex-direction: column; gap: 1.1rem; z-index: 20;
-}
-.side-nav a {
-  display: flex; align-items: center; gap: 0.65rem;
-  font-size: 0.82rem; color: var(--ink-soft); text-decoration: none;
-}
-.side-nav a .dot {
-  width: 7px; height: 7px; border-radius: 50%; background: var(--ochre);
-  opacity: 0.45; flex-shrink: 0; transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.side-nav a:hover, .side-nav a.active { color: var(--ink); }
-.side-nav a:hover .dot, .side-nav a.active .dot { opacity: 1; transform: scale(1.3); }
+<!-- ===== NOW — right at the top, what's happening today ===== -->
+<section id="now">
+  <h2 class="section-title">What I'm doing</h2>
 
-/* bottom bar version for small / narrow screens */
-.bottom-nav {
-  display: none;
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
-  background: rgba(251,243,231,0.95); backdrop-filter: blur(6px);
-  border-top: 1px solid var(--line);
-  padding: 0.8rem 4vw; justify-content: space-around;
-}
-.bottom-nav a {
-  font-size: 0.72rem; color: var(--ink-soft); text-decoration: none;
-  display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
-}
-.bottom-nav a .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ochre); opacity: 0.4; }
-.bottom-nav a.active, .bottom-nav a:hover { color: var(--ink); }
-.bottom-nav a.active .dot { opacity: 1; }
+  <div class="entry reveal">
+    <div class="status"><span class="status-label">Active</span></div>
+    <div>
+      <h3>Finding where tech fits</h3>
+      <p>Not learning the basics anymore. Trying to figure out where a small, sensor or chip actually makes something better — not just where it can be added.</p>
+    </div>
+  </div>
 
-@media (max-width: 1080px) {
-  .side-nav { display: none; }
-  .bottom-nav { display: flex; }
-  body { padding-bottom: 4.5rem; }
-}
+  <div class="entry reveal">
+    <div class="status"><span class="status-label">Active</span></div>
+    <div>
+      <h3>Learning resin art</h3>
+      <p>Testing pours, colors, curing times. Partly for the finish it gives my other builds, partly because it's fun on its own.</p>
+    </div>
+  </div>
 
-/* ---------- hero ---------- */
-.hero { padding: 14vh 8vw 8vh; max-width: 760px; }
-.eyebrow {
-  font-family: 'Space Mono', monospace; font-size: 0.7rem;
-  letter-spacing: 0.06em; color: var(--olive); text-transform: uppercase;
-  margin-bottom: 1.1rem;
-}
-.hero h1 {
-  font-family: 'Fraunces', serif; font-weight: 500;
-  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
-  line-height: 1.18; letter-spacing: -0.01em;
-  max-width: 16ch;
-}
-.tag {
-  margin-top: 2.2rem; display: inline-flex; align-items: center;
-  gap: 0.9rem; padding: 0.65rem 1.3rem; background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 999px; text-decoration: none; color: var(--ink);
-}
-.dot-lg {
-  width: 9px; height: 9px; border-radius: 50%; background: var(--ochre);
-  box-shadow: 0 0 8px 2px var(--ochre-soft);
-  animation: breathe 3.2s ease-in-out infinite; flex-shrink: 0;
-}
-@keyframes breathe { 0%,100%{opacity:.55;} 50%{opacity:1;} }
+  <div class="entry reveal">
+    <div class="status"><span class="status-label">Active</span></div>
+    <div>
+      <h3>Fixing what's around me</h3>
+      <p>Lights, fans, small things that break and get thrown out. I open them first, then decide if I'm fixing it or building something better.</p>
+    </div>
+  </div>
+
+  <div class="entry reveal">
+    <div class="status"><span class="status-label">Ongoing</span></div>
+    <div>
+      <h3>Watching how people work</h3>
+      <p>No project here yet. Just paying attention to how people decide, get stuck, and react — it shows up in how I think about design.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT — the short version, before the long one ===== -->
+<section id="about">
+  <h2 class="section-title">A bit about me</h2>
+  <p class="about-line reveal">I like figuring out how things work, and fixing them when they don't. Most of what I do sits between electronics, design, and making — solving small problems with whatever's on hand.</p>
+  <div class="chips reveal">
+    <span class="chip">Problem solving</span>
+    <span class="chip">Troubleshooting electronics</span>
+    <span class="chip">Design</span>
+    <span class="chip">3D printing</span>
+    <span class="chip">Microcontrollers</span>
+    <span class="chip">Automation</span>
+    <span class="chip">New tech in old products</span>
+    <span class="chip">Human behaviour</span>
+  </div>
+</section>
+
+<!-- ===== STORY — the long version, but skimmable ===== -->
+<section id="story">
+  <h2 class="section-title">Where I'm at</h2>
+  <p class="story-intro reveal">Not a straight line. If you looked at my browser history from the last ten years, you'd think a few different people shared the same laptop.</p>
+
+  <div class="trail">
+
+    <div class="beat reveal">
+      <div class="when">School days</div>
+      <h3>Taking things apart at every fair</h3>
+      <p>My hometown had two big fairs every year. I always wanted a remote-control car. The fun part started after I got bored of driving it — sitting on the floor with a sharpener blade, taking it apart just to see what was inside.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — old RC car, or something similar</span></div>
+      <p class="pull">I didn't own a screwdriver. The sharpener blade became one.</p>
+      <p>Some cars went back together fine. Some didn't. My parents eventually stopped buying them, so I started saving my own pocket money to buy — and open — them myself.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">7th grade</div>
+      <!-- MOTIF: bulb — delete this whole <svg> to remove it, or keep the beat-heading wrapper without it -->
+      <div class="beat-heading">
+        <svg class="motif motif-bulb" viewBox="0 0 30 40" width="18" height="24" aria-hidden="true">
+          <path class="bulb-glass" d="M15 4 C22 4 26 10 26 16 C26 21 22 24 19 26 L19 30 L11 30 L11 26 C8 24 4 21 4 16 C4 10 8 4 15 4 Z" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/>
+          <rect x="11" y="31" width="8" height="4" rx="1" fill="none" stroke="var(--ink-soft)" stroke-width="1.2"/>
+          <path class="bulb-filament" d="M12 14 L15 20 L18 14" fill="none" stroke="var(--ochre)" stroke-width="1.3" opacity="0"/>
+        </svg>
+        <h3>A brake light nobody asked for</h3>
+      </div>
+      <p>I just thought my bicycle should have one. I hid the battery under the seat, hid the wires, and used the brake pads as the switch. It wasn't neat. But it worked.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the cycle, or a sketch of the wiring</span></div>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Around the same time</div>
+      <h3>Burning a motor just to see</h3>
+      <p>Someone mentioned dynamos — small generators old bikes used to have. I'd never seen one, so a friend showed me the next best thing: spin a toy motor fast enough, and an LED lights up. We rigged one to my wheel and rode until the motor burned out. So I opened it and rewired it, just to see if it would work again.</p>
+      <p class="pull">Nobody teaches you electricity like electricity does.</p>
+      <p>Not every idea was a good one — a few LED strips came off parked trucks, and once I wired a 12V LED straight into a wall socket. It exploded. Lesson learned either way.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">10th grade</div>
+      <h3>A broken phone changed my direction</h3>
+      <p>My phone's power button stopped working, so I opened that too — but it needed soldering I didn't have. A repair shop fixed it, and I left thinking more about learning to solder than about the phone. That phone became my classroom after that: editing photos and videos, basic Linux commands, tutorials I didn't fully get but kept trying anyway.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Diploma → B.Tech</div>
+      <h3>Two very different degrees</h3>
+      <p>Mechanical Engineering wasn't planned — it was just the seat I got. It taught me how gears, shafts, and bearings actually work, and how to file metal flat. Later I moved to Computer Science: Python, HTML, C++, basic machine learning. In between, I found Arduino — mostly confusion at first, code copied from YouTube that sometimes worked and sometimes didn't.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Recent years</div>
+      <!-- MOTIF: car + fan — delete either <svg> to remove just that one -->
+      <div class="beat-heading">
+        <svg class="motif motif-car" viewBox="0 0 60 30" width="38" height="19" aria-hidden="true">
+          <path class="car-body" d="M4 20 L8 10 L20 10 L24 6 L44 6 L50 12 L56 12 L56 20 Z" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/>
+          <circle class="car-wheel" cx="16" cy="21" r="4.5" fill="none" stroke="var(--ochre)" stroke-width="1.6"/>
+          <circle class="car-wheel" cx="46" cy="21" r="4.5" fill="none" stroke="var(--ochre)" stroke-width="1.6"/>
+          <circle class="car-light" cx="55" cy="14" r="1.6" fill="var(--ochre)" opacity="0"/>
+        </svg>
+        <svg class="motif motif-fan" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+          <g class="fan-blades">
+            <path d="M20 20 C20 20 20 6 26 6 C30 6 30 14 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+            <path d="M20 20 C20 20 32 24 30 30 C28 34 20 30 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+            <path d="M20 20 C20 20 10 28 6 24 C3 21 12 16 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+          </g>
+          <circle cx="20" cy="20" r="2.5" fill="var(--ink-soft)"/>
+        </svg>
+        <h3>Building the things I wanted as a kid</h3>
+      </div>
+      <p>I finally bought my own soldering iron instead of paying someone else to do it. Comfortable with electronics by then, I built the remote-control car I'd wanted since I was a kid — this time designed myself, controlled from my phone over Bluetooth. Then I connected my home's lights and fan to a small board, so I could turn them on from my phone. Nobody asked for it. I just wanted to know if I could.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the rebuilt car, or your setup</span></div>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Along the way</div>
+      <h3>AI became another tool on the desk</h3>
+      <p>Instead of hours searching old forums, I could ask questions, debug code, and learn new topics faster. The browser didn't disappear. Neither did YouTube. This just became one more place I learn from.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">A year ago</div>
+      <!-- MOTIF: resin drop — delete this <svg> to remove it -->
+      <div class="beat-heading">
+        <svg class="motif motif-resin" viewBox="0 0 20 34" width="14" height="24" aria-hidden="true">
+          <path class="resin-drop" d="M10 2 C10 2 18 16 18 23 C18 28.5 14.4 32 10 32 C5.6 32 2 28.5 2 23 C2 16 10 2 10 2 Z" fill="var(--ochre)" opacity="0"/>
+        </svg>
+        <h3>3D printing, one problem at a time</h3>
+      </div>
+      <p>My first prints weren't good — failed supports, wrong sizes, cracked parts. I spent more time calibrating than printing. Learning to design my own parts brought back the CAD I'd learned in diploma, except now I could hold the result a few hours later. The layer lines bothered me, so I learned sanding, then resin, then silicone molds — each fix led to the next thing to learn.</p>
+      <div class="photo wide empty"><span class="plus">+</span><span>drop a wide shot here — the workbench, mid-project</span></div>
+      <p>That's turned into real products lately, not just projects — a lamp made from PLA, and a diffuser combining wood and 3D-printed parts. Neither was perfect. Both taught me more than another weekend of tutorials would have.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the latest lamp</span></div>
+      <a href="lamp.html" class="process-link">See how it came together ↗</a>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Right now</div>
+      <h3>A day job, and everything else</h3>
+      <p>Delivery work paid the bills at first. Documentation work pays them now. It's stable, but after enough repetition, I did what I always do — started trying to automate the boring parts of it.</p>
+      <p class="pull">At the time, none of this felt connected. Now it looks like it was pointing the same way all along.</p>
+      <p>A lot of things never became anything — ideas that stayed ideas, prints sitting in a box, code that never left my laptop. Lately I'm trying to finish more of what I start.</p>
+    </div>
+
+  </div>
+
+  <p class="closing-line reveal">This isn't finished. I just wanted to write down how I got here so far.</p>
+</section>
+
+<!-- ===== CONNECT — short message box, sends via Formspree ===== -->
+<section id="connect">
+  <h2 class="section-title reveal">Wanna say something? Or connect?</h2>
+  <p class="sub reveal">Leave a note below — I read all of these myself.</p>
+
+  <!-- FORMSPREE: replace YOUR_FORM_ID with your real Formspree endpoint.
+       Sign up free at formspree.io, create a form, and swap the URL below. -->
+  <form class="msg reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your name" required>
+    <input type="email" name="email" placeholder="Your email" required>
+    <textarea name="message" placeholder="Say something..." required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p class="msg-note">Goes straight to my inbox — no account or sign-up needed on your end.</p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>@keyframes breathe { 0%,100%{opacity:.55;} 50%{opacity:1;} }
 .tag-text { font-family: 'Space Mono', monospace; font-size: 0.8rem; }
 
 /* ---------- section shell ---------- */
