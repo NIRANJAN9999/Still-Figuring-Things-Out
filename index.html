@@ -187,6 +187,136 @@
         <h3>3D printing, one problem at a time</h3>
       </div>
       <p>My first prints weren't good — failed supports, wrong sizes, cracked parts. I spent more time calibrating than printing. Learning to design my own parts brought back the CAD I'd learned in diploma, except now I could hold the result a few hours later. The layer lines bothered me, so I learned sanding, then resin, then silicone molds — each fix led to the next thing to learn.</p>
+      <div class="photo wide"><img src="Lamp_images/Failure_prints1.jpg" alt="An early failed 3D print — wrong sizing and cracked supports"></div>
+      <p>That's turned into real products lately, not just projects — a lamp made from PLA, and a diffuser combining wood and 3D-printed parts. Neither was perfect. Both taught me more than another weekend of tutorials would have.</p>
+      <div class="photo"><img src="Lamp_images/lamp-front.jpg" alt="The finished lamp, front view"></div>
+      <a href="lamp.html" class="process-link">See how it came together ↗</a>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Right now</div>
+      <h3>A day job, and everything else</h3>
+      <p>Delivery work paid the bills at first. Documentation work pays them now. It's stable, but after enough repetition, I did what I always do — started trying to automate the boring parts of it.</p>
+      <p class="pull">At the time, none of this felt connected. Now it looks like it was pointing the same way all along.</p>
+      <p>A lot of things never became anything — ideas that stayed ideas, prints sitting in a box, code that never left my laptop. Lately I'm trying to finish more of what I start.</p>
+    </div>
+
+  </div>
+
+  <p class="closing-line reveal">This isn't finished. I just wanted to write down how I got here so far.</p>
+</section>
+
+<!-- ===== CONNECT — short message box, sends via Formspree ===== -->
+<section id="connect">
+  <h2 class="section-title reveal">Wanna say something? Or connect?</h2>
+  <p class="sub reveal">Leave a note below — I read all of these myself.</p>
+
+  <div data-fs-success class="form-success"></div>
+  <div data-fs-error class="form-error"></div>
+
+  <!-- Formspree: the action/method below is a plain-HTML fallback that works
+       even if JavaScript fails to load. The script at the bottom of the page
+       upgrades this to submit over AJAX instead, so the page never navigates
+       away and shows the success/error messages above right in place. -->
+  <form class="msg reveal" id="contact-form" action="https://formspree.io/f/xgogyzwy" method="POST">
+    <input type="text" name="name" placeholder="Your name" data-fs-field required>
+    <span data-fs-error="name" class="field-error"></span>
+
+    <input type="email" name="email" placeholder="Your email" data-fs-field required>
+    <span data-fs-error="email" class="field-error"></span>
+
+    <textarea name="message" placeholder="Say something..." data-fs-field required></textarea>
+    <span data-fs-error="message" class="field-error"></span>
+
+    <button type="submit" data-fs-submit-btn>Send</button>
+  </form>
+  <p class="msg-note">Goes straight to my inbox — no account or sign-up needed on your end.</p>
+</section>
+
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xgogyzwy' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+<script src="script.js"></script>
+</body>
+</html>    </div>
+
+    <div class="beat reveal">
+      <div class="when">7th grade</div>
+      <!-- MOTIF: bulb — delete this whole <svg> to remove it, or keep the beat-heading wrapper without it -->
+      <div class="beat-heading">
+        <svg class="motif motif-bulb" viewBox="0 0 30 40" width="18" height="24" aria-hidden="true">
+          <path class="bulb-glass" d="M15 4 C22 4 26 10 26 16 C26 21 22 24 19 26 L19 30 L11 30 L11 26 C8 24 4 21 4 16 C4 10 8 4 15 4 Z" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/>
+          <rect x="11" y="31" width="8" height="4" rx="1" fill="none" stroke="var(--ink-soft)" stroke-width="1.2"/>
+          <path class="bulb-filament" d="M12 14 L15 20 L18 14" fill="none" stroke="var(--ochre)" stroke-width="1.3" opacity="0"/>
+        </svg>
+        <h3>A brake light nobody asked for</h3>
+      </div>
+      <p>I just thought my bicycle should have one. I hid the battery under the seat, hid the wires, and used the brake pads as the switch. It wasn't neat. But it worked.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the cycle, or a sketch of the wiring</span></div>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Around the same time</div>
+      <h3>Burning a motor just to see</h3>
+      <p>Someone mentioned dynamos — small generators old bikes used to have. I'd never seen one, so a friend showed me the next best thing: spin a toy motor fast enough, and an LED lights up. We rigged one to my wheel and rode until the motor burned out. So I opened it and rewired it, just to see if it would work again.</p>
+      <p class="pull">Nobody teaches you electricity like electricity does.</p>
+      <p>Not every idea was a good one — a few LED strips came off parked trucks, and once I wired a 12V LED straight into a wall socket. It exploded. Lesson learned either way.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">10th grade</div>
+      <h3>A broken phone changed my direction</h3>
+      <p>My phone's power button stopped working, so I opened that too — but it needed soldering I didn't have. A repair shop fixed it, and I left thinking more about learning to solder than about the phone. That phone became my classroom after that: editing photos and videos, basic Linux commands, tutorials I didn't fully get but kept trying anyway.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Diploma → B.Tech</div>
+      <h3>Two very different degrees</h3>
+      <p>Mechanical Engineering wasn't planned — it was just the seat I got. It taught me how gears, shafts, and bearings actually work, and how to file metal flat. Later I moved to Computer Science: Python, HTML, C++, basic machine learning. In between, I found Arduino — mostly confusion at first, code copied from YouTube that sometimes worked and sometimes didn't.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Recent years</div>
+      <!-- MOTIF: car + fan — delete either <svg> to remove just that one -->
+      <div class="beat-heading">
+        <svg class="motif motif-car" viewBox="0 0 60 30" width="38" height="19" aria-hidden="true">
+          <path class="car-body" d="M4 20 L8 10 L20 10 L24 6 L44 6 L50 12 L56 12 L56 20 Z" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/>
+          <circle class="car-wheel" cx="16" cy="21" r="4.5" fill="none" stroke="var(--ochre)" stroke-width="1.6"/>
+          <circle class="car-wheel" cx="46" cy="21" r="4.5" fill="none" stroke="var(--ochre)" stroke-width="1.6"/>
+          <circle class="car-light" cx="55" cy="14" r="1.6" fill="var(--ochre)" opacity="0"/>
+        </svg>
+        <svg class="motif motif-fan" viewBox="0 0 40 40" width="22" height="22" aria-hidden="true">
+          <g class="fan-blades">
+            <path d="M20 20 C20 20 20 6 26 6 C30 6 30 14 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+            <path d="M20 20 C20 20 32 24 30 30 C28 34 20 30 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+            <path d="M20 20 C20 20 10 28 6 24 C3 21 12 16 20 20 Z" fill="var(--olive)" opacity="0.75"/>
+          </g>
+          <circle cx="20" cy="20" r="2.5" fill="var(--ink-soft)"/>
+        </svg>
+        <h3>Building the things I wanted as a kid</h3>
+      </div>
+      <p>I finally bought my own soldering iron instead of paying someone else to do it. Comfortable with electronics by then, I built the remote-control car I'd wanted since I was a kid — this time designed myself, controlled from my phone over Bluetooth. Then I connected my home's lights and fan to a small board, so I could turn them on from my phone. Nobody asked for it. I just wanted to know if I could.</p>
+      <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the rebuilt car, or your setup</span></div>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">Along the way</div>
+      <h3>AI became another tool on the desk</h3>
+      <p>Instead of hours searching old forums, I could ask questions, debug code, and learn new topics faster. The browser didn't disappear. Neither did YouTube. This just became one more place I learn from.</p>
+    </div>
+
+    <div class="beat reveal">
+      <div class="when">A year ago</div>
+      <!-- MOTIF: resin drop — delete this <svg> to remove it -->
+      <div class="beat-heading">
+        <svg class="motif motif-resin" viewBox="0 0 20 34" width="14" height="24" aria-hidden="true">
+          <path class="resin-drop" d="M10 2 C10 2 18 16 18 23 C18 28.5 14.4 32 10 32 C5.6 32 2 28.5 2 23 C2 16 10 2 10 2 Z" fill="var(--ochre)" opacity="0"/>
+        </svg>
+        <h3>3D printing, one problem at a time</h3>
+      </div>
+      <p>My first prints weren't good — failed supports, wrong sizes, cracked parts. I spent more time calibrating than printing. Learning to design my own parts brought back the CAD I'd learned in diploma, except now I could hold the result a few hours later. The layer lines bothered me, so I learned sanding, then resin, then silicone molds — each fix led to the next thing to learn.</p>
       <div class="photo wide empty"><span class="plus">+</span><span>drop a wide shot here — the workbench, mid-project</span></div>
       <p>That's turned into real products lately, not just projects — a lamp made from PLA, and a diffuser combining wood and 3D-printed parts. Neither was perfect. Both taught me more than another weekend of tutorials would have.</p>
       <div class="photo empty"><span class="plus">+</span><span>drop a photo here — the latest lamp</span></div>
